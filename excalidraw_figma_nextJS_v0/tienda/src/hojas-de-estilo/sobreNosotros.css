@@ -1,0 +1,39 @@
+/* sobreNosotros.css */
+.sobre {
+  padding: 2rem;
+  background-color: #f4f4f4;
+}
+
+.sobre-content {
+  margin-bottom: 2rem;
+}
+  
+.sobre h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+  
+.sobre-content blockquote {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.historia,
+.proceso-artesanal {
+  margin-top: 2rem;
+}
+
+.historia h3,
+.proceso-artesanal h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.historia p,
+.proceso-artesanal p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}

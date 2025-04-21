@@ -1,0 +1,62 @@
+/* componentes/Contacto.css */
+
+.contacto {
+    padding: 3rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+.contacto h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+  
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+  
+.contact-form input,
+.contact-form textarea {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+  contact-form button {
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.contact-form button:hover {
+    background-color: #005fa3;
+}
+  
+.redes {
+    margin-top: 2rem;
+}
+  
+.social-links a {
+    margin: 0 1rem;
+    color: #0077cc;
+    text-decoration: none;
+}
+  
+.social-links a:hover {
+    text-decoration: underline;
+}
+  
+footer {
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #666;
+}  
