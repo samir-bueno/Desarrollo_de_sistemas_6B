@@ -1,0 +1,202 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  border-bottom: 1px solid var(--color-amber-200);
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+}
+
+.header-content {
+  display: flex;
+  height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo {
+  position: relative;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-amber-900);
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-link {
+    color: var(--color-amber-800);
+    font-weight: 500;
+    transition: color 0.2s;
+    padding: 0.5rem 0;
+    position: relative;
+  }
+
+  .nav-link:hover {
+    color: var(--color-amber-600);
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-amber-600);
+    transition: width 0.3s;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* Ajustar la alineación vertical del botón de menú */
+.menu-button {
+  color: var(--color-amber-800);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0;
+}
+
+.menu-button:hover {
+  color: var(--color-amber-600);
+}
+
+/* Overlay de fondo para el menú móvil */
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 90;
+}
+
+/* Mejorar la visibilidad del menú desplegable con un color distintivo */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80vw;
+  background-color: var(--color-amber-800);
+  z-index: 100;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem;
+}
+
+.close-button {
+  align-self: flex-end;
+  background-color: white;
+  border: none;
+  color: var(--color-amber-800);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.close-button:hover {
+  background-color: var(--color-amber-100);
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.mobile-nav .nav-link {
+  color: var(--color-amber-900);
+  font-weight: 600;
+  font-size: 1.125rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-left: 4px solid var(--color-amber-500);
+}
+
+.mobile-nav .nav-link:hover {
+  color: white;
+  background-color: var(--color-amber-600);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Añadir un título al menú móvil */
+.mobile-menu-title {
+  color: white;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-amber-500);
+}
