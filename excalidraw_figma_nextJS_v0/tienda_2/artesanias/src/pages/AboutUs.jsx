@@ -1,5 +1,6 @@
 import PageHeader from "../components/PageHeader"
 import "../hojas-de-estilo/AboutUs.css"
+import logo from '../imagenes/logo_artesanal.png'
 
 function AboutUs() {
   const proceso = [
@@ -55,7 +56,7 @@ function AboutUs() {
             </div>
             <div className="history-image-container">
               <img
-                src="https://images.unsplash.com/photo-1604849329122-7c9be9b7bb5e"
+                src={logo}
                 alt="Fundador de Manos Creativas"
                 className="history-image"
               />

@@ -84,9 +84,15 @@ function Header() {
                 {/* Fondo semi-transparente detrás del menú */}
                 <div className="menu-backdrop" onClick={toggleMenu}></div>
 
-                <div className="menu-overlay">
-                  <div className="menu-content">
-                    <button className="close-button" onClick={toggleMenu} aria-label="Cerrar menú">
+                {/* Menú móvil con estilo inline para garantizar fondo sólido */}
+                <div className="menu-overlay" style={{ backgroundColor: "#FFFFFF" }}>
+                  <div className="menu-content" style={{ backgroundColor: "#FFFFFF" }}>
+                    <button
+                      className="close-button"
+                      onClick={toggleMenu}
+                      aria-label="Cerrar menú"
+                      style={{ backgroundColor: "#FCD34D", color: "#78350F" }}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -103,15 +109,22 @@ function Header() {
                       </svg>
                     </button>
 
-                    <h2 className="mobile-menu-title">Menú</h2>
+                    <h2 className="mobile-menu-title" style={{ backgroundColor: "#FFFFFF", color: "#78350F" }}>
+                      Menú
+                    </h2>
 
-                    <nav className="mobile-nav">
+                    <nav className="mobile-nav" style={{ backgroundColor: "#FFFFFF" }}>
                       {links.map((link) => (
                         <Link
                           key={link.href}
                           to={link.href.startsWith("#") ? link.href : link.href}
                           className="nav-link"
                           onClick={link.onClick || toggleMenu}
+                          style={{
+                            backgroundColor: "#FEF3C7",
+                            color: "#78350F",
+                            borderLeft: "4px solid #F59E0B",
+                          }}
                         >
                           {link.label}
                         </Link>

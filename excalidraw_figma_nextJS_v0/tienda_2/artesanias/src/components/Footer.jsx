@@ -111,7 +111,8 @@ function Footer() {
         <div className="footer-grid">
           <div className="contact-section">
             <h2 className="section-title">Contáctanos</h2>
-            <p className="section-description">
+            {/* Aplicando estilo inline para asegurar que se aplique el color */}
+            <p style={{ color: "#FFFFFF", fontWeight: "600", marginBottom: "1.5rem" }}>
               Completa el formulario y nos pondremos en contacto contigo lo antes posible.
             </p>
 
@@ -303,11 +304,6 @@ function Footer() {
                   <li>
                     <Link to="/productos?categoria=textiles" className="footer-link">
                       Textiles
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/productos?categoria=madera" className="footer-link">
-                      Madera
                     </Link>
                   </li>
                   <li>

@@ -1,64 +1,11 @@
 import { Link } from "react-router-dom"
 import ProductCard from "../components/ProductCard"
 import "../hojas-de-estilo/Home.css"
-import logo from '../imagenes/logo_artesanal.png'
 
 function Home() {
   const featuredProducts = [
     {
-      id: 1,
-      name: "Jarrón de Cerámica Pintado a Mano",
-      price: 1200,
-      image: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261",
-      category: "Cerámica",
-      description:
-        "Este hermoso jarrón de cerámica está pintado a mano con diseños tradicionales. Cada pieza es única y refleja la rica tradición artesanal de nuestra región.",
-      material: "Cerámica",
-      origin: "Oaxaca, México",
-      artisan: "María González",
-      dimensions: "25cm x 15cm",
-    },
-    {
-      id: 2,
-      name: "Tapete Tejido Tradicional",
-      price: 850,
-      image: "https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2",
-      category: "Textiles",
-      description:
-        "Tapete tejido a mano con lana natural y teñido con tintes vegetales. Cada diseño representa símbolos ancestrales y cuenta una historia única.",
-      material: "Lana natural",
-      origin: "Chiapas, México",
-      artisan: "Familia Hernández",
-      dimensions: "120cm x 80cm",
-    },
-    {
-      id: 3,
-      name: "Figura Tallada en Madera",
-      price: 950,
-      image: "https://images.unsplash.com/photo-1610701596007-11502861dcfa",
-      category: "Madera",
-      description:
-        "Figura tallada a mano en madera de cedro por artesanos expertos. Representa la fauna local y está acabada con tintes naturales y ceras protectoras.",
-      material: "Madera de cedro",
-      origin: "Michoacán, México",
-      artisan: "José Ramírez",
-      dimensions: "30cm altura",
-    },
-    {
-      id: 4,
-      name: "Collar de Cuentas",
-      price: 450,
-      image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908",
-      category: "Joyería",
-      description:
-        "Collar artesanal elaborado con cuentas de vidrio soplado y plata. Diseño único inspirado en motivos prehispánicos.",
-      material: "Vidrio y plata",
-      origin: "Puebla, México",
-      artisan: "Taller Luna",
-      dimensions: "45cm longitud",
-    },
-    {
-      id: 5,
+      id: 7,
       name: "Cojín Bordado a Mano",
       price: 520,
       image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace",
@@ -71,7 +18,7 @@ function Home() {
       dimensions: "40cm x 40cm",
     },
     {
-      id: 6,
+      id: 8,
       name: "Lámpara de Barro",
       price: 750,
       image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15",
@@ -83,6 +30,19 @@ function Home() {
       artisan: "Familia Martínez",
       dimensions: "35cm altura x 20cm diámetro",
     },
+    {
+      id: 10,
+      name: "Pulsera de Plata",
+      price: 420,
+      image: "https://images.unsplash.com/photo-1611652022419-a9419f74343d",
+      category: "Joyería",
+      description:
+        "Pulsera artesanal de plata .925 con diseños inspirados en símbolos prehispánicos. Cada pieza es forjada y grabada a mano por maestros plateros.",
+      material: "Plata .925",
+      origin: "Taxco, México",
+      artisan: "Taller Plata Pura",
+      dimensions: "Ajustable",
+    },
   ]
 
   return (
@@ -91,7 +51,7 @@ function Home() {
       <section className="hero">
         <div className="hero-background">
           <img
-            src={logo}
+            src="https://images.unsplash.com/photo-1604849329122-7c9be9b7bb5e"
             alt="Artesanías hechas a mano"
             className="hero-image"
           />

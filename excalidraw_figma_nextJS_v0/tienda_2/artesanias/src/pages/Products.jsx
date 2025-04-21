@@ -48,19 +48,6 @@ function Products() {
       dimensions: "120cm x 80cm",
     },
     {
-      id: 3,
-      name: "Figura Tallada en Madera",
-      price: 950,
-      image: "https://images.unsplash.com/photo-1610701596007-11502861dcfa",
-      category: "Madera",
-      description:
-        "Figura tallada a mano en madera de cedro por artesanos expertos. Representa la fauna local y está acabada con tintes naturales y ceras protectoras.",
-      material: "Madera de cedro",
-      origin: "Michoacán, México",
-      artisan: "José Ramírez",
-      dimensions: "30cm altura",
-    },
-    {
       id: 4,
       name: "Collar de Cuentas de Vidrio",
       price: 450,
@@ -113,19 +100,6 @@ function Products() {
       dimensions: "35cm altura x 20cm diámetro",
     },
     {
-      id: 9,
-      name: "Móvil de Alebrijes",
-      price: 890,
-      image: "https://images.unsplash.com/photo-1597696929736-6d13bed8e6a8",
-      category: "Madera",
-      description:
-        "Móvil decorativo compuesto por coloridos alebrijes tallados y pintados a mano. Cada figura representa un animal fantástico de la tradición mexicana.",
-      material: "Madera de copal",
-      origin: "Oaxaca, México",
-      artisan: "Familia García",
-      dimensions: "50cm altura total",
-    },
-    {
       id: 10,
       name: "Pulsera de Plata",
       price: 420,
@@ -165,19 +139,6 @@ function Products() {
       dimensions: "15cm diámetro x 8cm altura",
     },
     {
-      id: 13,
-      name: "Máscara Decorativa",
-      price: 620,
-      image: "https://images.unsplash.com/photo-1601059437094-c5e1a2e1b5a3",
-      category: "Madera",
-      description:
-        "Máscara tallada a mano en madera de cedro, representando personajes del folclore mexicano. Pieza única con acabados en pintura natural.",
-      material: "Madera de cedro",
-      origin: "Michoacán, México",
-      artisan: "Maestro Tallador López",
-      dimensions: "25cm x 18cm",
-    },
-    {
       id: 14,
       name: "Aretes de Filigrana",
       price: 290,
@@ -215,19 +176,6 @@ function Products() {
       origin: "Guanajuato, México",
       artisan: "Taller Cerámico Ancestral",
       dimensions: "40cm altura x 25cm diámetro",
-    },
-    {
-      id: 17,
-      name: "Caja Tallada",
-      price: 420,
-      image: "https://images.unsplash.com/photo-1605883705077-8d3d0afda512",
-      category: "Madera",
-      description:
-        "Caja decorativa tallada a mano en madera de pino con motivos florales en relieve. Ideal para guardar pequeños tesoros o como elemento decorativo.",
-      material: "Madera de pino",
-      origin: "Jalisco, México",
-      artisan: "Don Pedro Méndez",
-      dimensions: "20cm x 15cm x 10cm",
     },
     {
       id: 18,
@@ -295,7 +243,6 @@ function Products() {
               <option value="todos">Todos</option>
               <option value="cerámica">Cerámica</option>
               <option value="textiles">Textiles</option>
-              <option value="madera">Madera</option>
               <option value="joyería">Joyería</option>
             </select>
           </div>
