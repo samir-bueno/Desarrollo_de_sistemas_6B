@@ -1,5 +1,5 @@
 "use client"
-
+import logo from '../imagenes/logo_artesanal.png'
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import "../hojas-de-estilo/Footer.css"
@@ -80,8 +80,13 @@ function Footer() {
 
     // Validar formulario
     if (validateForm()) {
-      // Aquí iría la lógica para enviar el formulario a un servidor
-      console.log("Formulario enviado:", formData)
+      // Mostrar el objeto formData en la consola
+      console.log({
+        nombre: formData.nombre,
+        email: formData.email,
+        asunto: formData.asunto,
+        mensaje: formData.mensaje,
+      })
 
       // Mostrar mensaje de éxito
       setToast({
@@ -110,9 +115,29 @@ function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="contact-section">
-            <h2 className="section-title">Contáctanos</h2>
-            {/* Aplicando estilo inline para asegurar que se aplique el color */}
-            <p style={{ color: "#FFFFFF", fontWeight: "600", marginBottom: "1.5rem" }}>
+            {/* Título "Contáctanos" con estilo inline para mayor visibilidad */}
+            <h2
+              style={{
+                fontSize: "2.25rem",
+                fontFamily: "var(--font-serif)",
+                fontWeight: "700",
+                color: "#FFFFFF",
+                marginBottom: "1rem",
+                textShadow: "0 1px 3px rgba(0,0,0,0.3)",
+              }}
+            >
+              Contáctanos
+            </h2>
+            {/* Texto descriptivo con estilo inline */}
+            <p
+              style={{
+                color: "#FFFFFF",
+                fontWeight: "600",
+                marginBottom: "1.5rem",
+                fontSize: "1.125rem",
+                textShadow: "0 1px 2px rgba(0,0,0,0.3)",
+              }}
+            >
               Completa el formulario y nos pondremos en contacto contigo lo antes posible.
             </p>
 
@@ -202,7 +227,7 @@ function Footer() {
             <div className="info-section">
               <Link to="/" className="footer-logo">
                 <div className="footer-logo-image">
-                  <img src="https://i.imgur.com/8hkPd8T.png" alt="Manos Creativas Logo" className="logo-img" />
+                  <img src={logo} alt="Manos Creativas Logo" className="logo-img" />
                 </div>
                 <span className="footer-logo-text">Manos Creativas</span>
               </Link>

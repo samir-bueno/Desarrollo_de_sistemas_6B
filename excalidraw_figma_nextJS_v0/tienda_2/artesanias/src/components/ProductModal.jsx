@@ -13,7 +13,6 @@ function ProductModal({ product, onClose }) {
     }
 
     document.addEventListener("keydown", handleEscKey)
-    // Prevenir scroll en el body cuando el modal está abierto
     document.body.style.overflow = "hidden"
 
     return () => {
@@ -78,12 +77,6 @@ function ProductModal({ product, onClose }) {
                 </li>
                 <li>
                   <span>Origen:</span> {product.origin || "Hecho en México"}
-                </li>
-                <li>
-                  <span>Artesano:</span> {product.artisan || "Artesanos locales"}
-                </li>
-                <li>
-                  <span>Dimensiones:</span> {product.dimensions || "Tamaño estándar"}
                 </li>
               </ul>
             </div>

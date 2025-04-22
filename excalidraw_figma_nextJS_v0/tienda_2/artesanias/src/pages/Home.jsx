@@ -47,15 +47,17 @@ function Home() {
 
   return (
     <div className="home">
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="hero-background">
-          <img
-            src="https://images.unsplash.com/photo-1604849329122-7c9be9b7bb5e"
-            alt="Artesanías hechas a mano"
-            className="hero-image"
-          />
-        </div>
+      {/* Hero Section - Eliminado el hero-background */}
+      <section
+        className="hero"
+        style={{
+          backgroundColor: "#78350F",
+          backgroundImage:
+            "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1604849329122-7c9be9b7bb5e')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="hero-content">
           <div className="container">
             <h1 className="hero-title">Artesanías Manos Creativas</h1>
@@ -63,11 +65,9 @@ function Home() {
               Descubre el arte de lo hecho a mano, donde cada pieza cuenta una historia única
             </p>
             <div className="hero-buttons">
+              {/* Solo dejamos el botón "Ver Productos" */}
               <Link to="/productos" className="button button-primary">
                 Ver Productos
-              </Link>
-              <Link to="/sobre-nosotros" className="button button-outline">
-                Nuestra Historia
               </Link>
             </div>
           </div>
@@ -84,6 +84,7 @@ function Home() {
                 En Manos Creativas, cada pieza es el resultado de técnicas ancestrales transmitidas de generación en
                 generación. Nuestros artesanos combinan la tradición con toques contemporáneos para crear piezas únicas.
               </p>
+              {/* Volvemos a dejar solo el botón original */}
               <Link to="/sobre-nosotros" className="button button-primary">
                 Conoce Más Sobre Nosotros
                 <svg

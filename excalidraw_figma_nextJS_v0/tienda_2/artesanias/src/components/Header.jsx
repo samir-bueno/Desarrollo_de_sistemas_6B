@@ -1,20 +1,30 @@
 "use client"
-
-import { useState } from "react"
+import logo from '../imagenes/logo_artesanal.png'
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import "../hojas-de-estilo/Header.css"
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  // Efecto para prevenir el scroll cuando el menú está abierto
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = "auto"
+    }
+
+    return () => {
+      document.body.style.overflow = "auto"
+    }
+  }, [isMenuOpen])
+
   // Función para manejar el clic en el enlace de contacto
   const handleContactClick = (e) => {
     e.preventDefault()
-
-    // Cerrar el menú si está abierto
     setIsMenuOpen(false)
 
-    // Encontrar el elemento de contacto y hacer scroll
     const contactElement = document.getElementById("contacto")
     if (contactElement) {
       contactElement.scrollIntoView({ behavior: "smooth" })
@@ -23,6 +33,10 @@ function Header() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
+  }
+
+  const closeMenu = () => {
+    setIsMenuOpen(false)
   }
 
   const links = [
@@ -39,7 +53,7 @@ function Header() {
           <div className="logo-container">
             <Link to="/" className="logo-link">
               <div className="logo">
-                <img src="https://i.imgur.com/8hkPd8T.png" alt="Manos Creativas Logo" />
+                <img src={logo} alt="Manos Creativas Logo" />
               </div>
               <span className="logo-text">Manos Creativas</span>
             </Link>
@@ -78,65 +92,51 @@ function Header() {
                 <line x1="3" y1="18" x2="21" y2="18"></line>
               </svg>
             </button>
-
-            {isMenuOpen && (
-              <>
-                {/* Fondo semi-transparente detrás del menú */}
-                <div className="menu-backdrop" onClick={toggleMenu}></div>
-
-                {/* Menú móvil con estilo inline para garantizar fondo sólido */}
-                <div className="menu-overlay" style={{ backgroundColor: "#FFFFFF" }}>
-                  <div className="menu-content" style={{ backgroundColor: "#FFFFFF" }}>
-                    <button
-                      className="close-button"
-                      onClick={toggleMenu}
-                      aria-label="Cerrar menú"
-                      style={{ backgroundColor: "#FCD34D", color: "#78350F" }}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                      </svg>
-                    </button>
-
-                    <h2 className="mobile-menu-title" style={{ backgroundColor: "#FFFFFF", color: "#78350F" }}>
-                      Menú
-                    </h2>
-
-                    <nav className="mobile-nav" style={{ backgroundColor: "#FFFFFF" }}>
-                      {links.map((link) => (
-                        <Link
-                          key={link.href}
-                          to={link.href.startsWith("#") ? link.href : link.href}
-                          className="nav-link"
-                          onClick={link.onClick || toggleMenu}
-                          style={{
-                            backgroundColor: "#FEF3C7",
-                            color: "#78350F",
-                            borderLeft: "4px solid #F59E0B",
-                          }}
-                        >
-                          {link.label}
-                        </Link>
-                      ))}
-                    </nav>
-                  </div>
-                </div>
-              </>
-            )}
           </div>
         </div>
       </div>
+
+      {/* Menú móvil y backdrop */}
+      {isMenuOpen && (
+        <>
+          <div className="menu-backdrop"></div>
+          <div className="menu-overlay">
+            <div className="menu-content">
+              <button className="close-button" onClick={closeMenu} aria-label="Cerrar menú">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+
+              <h2 className="mobile-menu-title">Menú</h2>
+
+              <nav className="mobile-nav">
+                {links.map((link) => (
+                  <Link
+                    key={link.href}
+                    to={link.href.startsWith("#") ? link.href : link.href}
+                    className="nav-link"
+                    onClick={link.onClick || closeMenu}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          </div>
+        </>
+      )}
     </header>
   )
 }

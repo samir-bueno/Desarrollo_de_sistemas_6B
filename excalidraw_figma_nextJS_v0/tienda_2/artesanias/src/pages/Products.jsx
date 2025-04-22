@@ -1,5 +1,5 @@
 "use client"
-
+import servilleta_bordada from '../imagenes/servilleta.jpg'
 import { useState, useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
 import ProductCard from "../components/ProductCard"
@@ -19,8 +19,9 @@ function Products() {
     setSelectedCategory(categoriaParam || "todos")
   }, [categoriaParam])
 
-  // Datos de ejemplo para productos
+  // Datos de ejemplo para productos - Ajustados a 4 por categoría
   const productos = [
+    // Cerámica (4 productos)
     {
       id: 1,
       name: "Jarrón de Cerámica Pintado a Mano",
@@ -31,34 +32,6 @@ function Products() {
         "Este hermoso jarrón de cerámica está pintado a mano con diseños tradicionales. Cada pieza es única y refleja la rica tradición artesanal de nuestra región.",
       material: "Cerámica",
       origin: "Oaxaca, México",
-      artisan: "María González",
-      dimensions: "25cm x 15cm",
-    },
-    {
-      id: 2,
-      name: "Tapete Tejido Tradicional",
-      price: 850,
-      image: "https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2",
-      category: "Textiles",
-      description:
-        "Tapete tejido a mano con lana natural y teñido con tintes vegetales. Cada diseño representa símbolos ancestrales y cuenta una historia única.",
-      material: "Lana natural",
-      origin: "Chiapas, México",
-      artisan: "Familia Hernández",
-      dimensions: "120cm x 80cm",
-    },
-    {
-      id: 4,
-      name: "Collar de Cuentas de Vidrio",
-      price: 450,
-      image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908",
-      category: "Joyería",
-      description:
-        "Collar artesanal elaborado con cuentas de vidrio soplado y plata. Diseño único inspirado en motivos prehispánicos.",
-      material: "Vidrio y plata",
-      origin: "Puebla, México",
-      artisan: "Taller Luna",
-      dimensions: "45cm longitud",
     },
     {
       id: 6,
@@ -70,21 +43,6 @@ function Products() {
         "Plato decorativo de Talavera pintado a mano con motivos florales tradicionales. Perfecto como pieza decorativa o para servir alimentos.",
       material: "Cerámica de Talavera",
       origin: "Puebla, México",
-      artisan: "Taller Flores",
-      dimensions: "30cm diámetro",
-    },
-    {
-      id: 7,
-      name: "Cojín Bordado a Mano",
-      price: 520,
-      image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace",
-      category: "Textiles",
-      description:
-        "Cojín con bordado tradicional hecho a mano. Los motivos florales están inspirados en la naturaleza local y realizados con hilos de algodón de colores vibrantes.",
-      material: "Algodón 100%",
-      origin: "Yucatán, México",
-      artisan: "Colectivo Mujeres Artesanas",
-      dimensions: "40cm x 40cm",
     },
     {
       id: 8,
@@ -96,34 +54,6 @@ function Products() {
         "Lámpara artesanal elaborada en barro negro con técnicas ancestrales. Los patrones calados permiten que la luz cree hermosos efectos en el ambiente.",
       material: "Barro negro",
       origin: "Oaxaca, México",
-      artisan: "Familia Martínez",
-      dimensions: "35cm altura x 20cm diámetro",
-    },
-    {
-      id: 10,
-      name: "Pulsera de Plata",
-      price: 420,
-      image: "https://images.unsplash.com/photo-1611652022419-a9419f74343d",
-      category: "Joyería",
-      description:
-        "Pulsera artesanal de plata .925 con diseños inspirados en símbolos prehispánicos. Cada pieza es forjada y grabada a mano por maestros plateros.",
-      material: "Plata .925",
-      origin: "Taxco, México",
-      artisan: "Taller Plata Pura",
-      dimensions: "Ajustable",
-    },
-    {
-      id: 11,
-      name: "Servilletas Bordadas",
-      price: 280,
-      image: "https://images.unsplash.com/photo-1584010065045-0cd7c7c0a8b0",
-      category: "Textiles",
-      description:
-        "Juego de servilletas con delicados bordados hechos a mano. Perfectas para ocasiones especiales o como elemento decorativo en la mesa.",
-      material: "Lino",
-      origin: "Aguascalientes, México",
-      artisan: "Bordadoras de San José",
-      dimensions: "30cm x 30cm (juego de 4)",
     },
     {
       id: 12,
@@ -135,21 +65,41 @@ function Products() {
         "Tazón elaborado con la técnica tradicional de barro negro, pulido a mano hasta lograr su característico brillo. Ideal para servir o como pieza decorativa.",
       material: "Barro negro",
       origin: "Oaxaca, México",
-      artisan: "Taller Alfarero Tradicional",
-      dimensions: "15cm diámetro x 8cm altura",
+    },
+
+    // Textiles (4 productos)
+    {
+      id: 2,
+      name: "Tapete Tejido Tradicional",
+      price: 850,
+      image: "https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2",
+      category: "Textiles",
+      description:
+        "Tapete tejido a mano con lana natural y teñido con tintes vegetales. Cada diseño representa símbolos ancestrales y cuenta una historia única.",
+      material: "Lana natural",
+      origin: "Chiapas, México",
     },
     {
-      id: 14,
-      name: "Aretes de Filigrana",
-      price: 290,
-      image: "https://images.unsplash.com/photo-1630019852942-f89202989a59",
-      category: "Joyería",
+      id: 7,
+      name: "Cojín Bordado a Mano",
+      price: 520,
+      image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace",
+      category: "Textiles",
       description:
-        "Aretes elaborados con la técnica de filigrana en plata, formando delicados diseños florales. Trabajo minucioso realizado por maestros artesanos.",
-      material: "Plata .925",
-      origin: "Oaxaca, México",
-      artisan: "Taller Filigrana Fina",
-      dimensions: "3cm largo",
+        "Cojín con bordado tradicional hecho a mano. Los motivos florales están inspirados en la naturaleza local y realizados con hilos de algodón de colores vibrantes.",
+      material: "Algodón 100%",
+      origin: "Yucatán, México",
+    },
+    {
+      id: 11,
+      name: "Servilletas Bordadas",
+      price: 280,
+      image: servilleta_bordada,
+      category: "Textiles",
+      description:
+        "Juego de servilletas con delicados bordados hechos a mano. Perfectas para ocasiones especiales o como elemento decorativo en la mesa.",
+      material: "Lino",
+      origin: "Aguascalientes, México",
     },
     {
       id: 15,
@@ -161,21 +111,41 @@ function Products() {
         "Bolsa tejida a mano con fibras naturales y teñida con tintes vegetales. Diseño tradicional con motivos geométricos en colores vibrantes.",
       material: "Fibras naturales",
       origin: "Chiapas, México",
-      artisan: "Cooperativa Mujeres Tejedoras",
-      dimensions: "35cm x 30cm",
+    },
+
+    // Joyería (4 productos)
+    {
+      id: 4,
+      name: "Collar de Cuentas de Vidrio",
+      price: 450,
+      image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908",
+      category: "Joyería",
+      description:
+        "Collar artesanal elaborado con cuentas de vidrio soplado y plata. Diseño único inspirado en motivos prehispánicos.",
+      material: "Vidrio y plata",
+      origin: "Puebla, México",
     },
     {
-      id: 16,
-      name: "Vasija Decorativa",
-      price: 580,
-      image: "https://images.unsplash.com/photo-1490312278390-ab64016e0aa9",
-      category: "Cerámica",
+      id: 10,
+      name: "Pulsera de Plata",
+      price: 420,
+      image: "https://images.unsplash.com/photo-1611652022419-a9419f74343d",
+      category: "Joyería",
       description:
-        "Vasija decorativa elaborada y pintada a mano con diseños geométricos inspirados en culturas prehispánicas. Pieza única de colección.",
-      material: "Cerámica de alta temperatura",
-      origin: "Guanajuato, México",
-      artisan: "Taller Cerámico Ancestral",
-      dimensions: "40cm altura x 25cm diámetro",
+        "Pulsera artesanal de plata .925 con diseños inspirados en símbolos prehispánicos. Cada pieza es forjada y grabada a mano por maestros plateros.",
+      material: "Plata .925",
+      origin: "Taxco, México",
+    },
+    {
+      id: 14,
+      name: "Aretes de Filigrana",
+      price: 290,
+      image: "https://images.unsplash.com/photo-1630019852942-f89202989a59",
+      category: "Joyería",
+      description:
+        "Aretes elaborados con la técnica de filigrana en plata, formando delicados diseños florales. Trabajo minucioso realizado por maestros artesanos.",
+      material: "Plata .925",
+      origin: "Oaxaca, México",
     },
     {
       id: 18,
@@ -187,8 +157,6 @@ function Products() {
         "Anillo artesanal de plata con incrustaciones de piedras semipreciosas. Diseño único inspirado en la naturaleza y elaborado completamente a mano.",
       material: "Plata .925 y turquesa",
       origin: "Taxco, México",
-      artisan: "Joyería Artesanal Mexicana",
-      dimensions: "Tallas disponibles: 6-9",
     },
   ]
 
