@@ -1,7 +1,8 @@
 "use client"
-import logo from '../imagenes/logo_artesanal.png'
+
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import logo_artesanal from '../imagenes/logo_artesanal.png'
 import "../hojas-de-estilo/Header.css"
 
 function Header() {
@@ -53,7 +54,7 @@ function Header() {
           <div className="logo-container">
             <Link to="/" className="logo-link">
               <div className="logo">
-                <img src={logo} alt="Manos Creativas Logo" />
+                <img src={logo_artesanal} alt="Manos Creativas Logo" />
               </div>
               <span className="logo-text">Manos Creativas</span>
             </Link>
@@ -96,46 +97,43 @@ function Header() {
         </div>
       </div>
 
-      {/* Menú móvil y backdrop */}
+      {/* Menú móvil */}
       {isMenuOpen && (
-        <>
-          <div className="menu-backdrop"></div>
-          <div className="menu-overlay">
-            <div className="menu-content">
-              <button className="close-button" onClick={closeMenu} aria-label="Cerrar menú">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+        <div className="menu-overlay">
+          <div className="menu-content">
+            <button className="close-button" onClick={closeMenu} aria-label="Cerrar menú">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+
+            <h2 className="mobile-menu-title">Menú</h2>
+
+            <nav className="mobile-nav">
+              {links.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href.startsWith("#") ? link.href : link.href}
+                  className="nav-link"
+                  onClick={link.onClick || closeMenu}
                 >
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </button>
-
-              <h2 className="mobile-menu-title">Menú</h2>
-
-              <nav className="mobile-nav">
-                {links.map((link) => (
-                  <Link
-                    key={link.href}
-                    to={link.href.startsWith("#") ? link.href : link.href}
-                    className="nav-link"
-                    onClick={link.onClick || closeMenu}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
-            </div>
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
           </div>
-        </>
+        </div>
       )}
     </header>
   )

@@ -3,32 +3,27 @@ import ProductCard from "../components/ProductCard"
 import "../hojas-de-estilo/Home.css"
 
 function Home() {
+  // Usando los mismos productos que están en la página de productos
   const featuredProducts = [
-    {
-      id: 7,
-      name: "Cojín Bordado a Mano",
-      price: 520,
-      image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace",
-      category: "Textiles",
-      description:
-        "Cojín con bordado tradicional hecho a mano. Los motivos florales están inspirados en la naturaleza local y realizados con hilos de algodón de colores vibrantes.",
-      material: "Algodón 100%",
-      origin: "Yucatán, México",
-      artisan: "Colectivo Mujeres Artesanas",
-      dimensions: "40cm x 40cm",
-    },
     {
       id: 8,
       name: "Lámpara de Barro",
       price: 750,
       image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15",
       category: "Cerámica",
-      description:
-        "Lámpara artesanal elaborada en barro negro con técnicas ancestrales. Los patrones calados permiten que la luz cree hermosos efectos en el ambiente.",
+      description: "Lámpara artesanal de barro negro con patrones calados para efectos de luz.",
       material: "Barro negro",
       origin: "Oaxaca, México",
-      artisan: "Familia Martínez",
-      dimensions: "35cm altura x 20cm diámetro",
+    },
+    {
+      id: 7,
+      name: "Cojín Bordado a Mano",
+      price: 520,
+      image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace",
+      category: "Textiles",
+      description: "Cojín con bordado tradicional de motivos florales en hilos de algodón.",
+      material: "Algodón 100%",
+      origin: "Yucatán, México",
     },
     {
       id: 10,
@@ -36,12 +31,9 @@ function Home() {
       price: 420,
       image: "https://images.unsplash.com/photo-1611652022419-a9419f74343d",
       category: "Joyería",
-      description:
-        "Pulsera artesanal de plata .925 con diseños inspirados en símbolos prehispánicos. Cada pieza es forjada y grabada a mano por maestros plateros.",
+      description: "Pulsera de plata .925 con diseños inspirados en símbolos prehispánicos.",
       material: "Plata .925",
       origin: "Taxco, México",
-      artisan: "Taller Plata Pura",
-      dimensions: "Ajustable",
     },
   ]
 

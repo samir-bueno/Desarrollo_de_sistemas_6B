@@ -25,6 +25,8 @@ body {
   background-color: rgba(255, 251, 235, 0.3);
   color: var(--color-amber-950);
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -35,6 +37,7 @@ a {
 img {
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 .container {
@@ -44,8 +47,24 @@ img {
   padding: 0 1rem;
 }
 
+@media (min-width: 576px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
 @media (min-width: 768px) {
   .container {
     padding: 0 2rem;
   }
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font-family: var(--font-sans);
 }

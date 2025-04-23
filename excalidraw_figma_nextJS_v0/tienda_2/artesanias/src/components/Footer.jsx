@@ -1,5 +1,5 @@
 "use client"
-import logo from '../imagenes/logo_artesanal.png'
+
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import "../hojas-de-estilo/Footer.css"
@@ -224,72 +224,8 @@ function Footer() {
           </div>
 
           <div className="footer-info">
-            <div className="info-section">
-              <Link to="/" className="footer-logo">
-                <div className="footer-logo-image">
-                  <img src={logo} alt="Manos Creativas Logo" className="logo-img" />
-                </div>
-                <span className="footer-logo-text">Manos Creativas</span>
-              </Link>
-              <p className="footer-description">
-                Artesanías únicas hechas a mano con técnicas tradicionales. Cada pieza cuenta una historia y lleva
-                consigo el alma de su creador.
-              </p>
-              <div className="social-links">
-                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="social-link">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                  </svg>
-                  <span className="sr-only">Facebook</span>
-                </a>
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="social-link">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                  </svg>
-                  <span className="sr-only">Instagram</span>
-                </a>
-                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="social-link">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-                  </svg>
-                  <span className="sr-only">Twitter</span>
-                </a>
-              </div>
-            </div>
-
-            <div className="footer-links-grid">
+            {/* Primera fila: Enlaces Rápidos y Categorías */}
+            <div className="footer-top-row">
               {/* Enlaces Rápidos */}
               <div className="links-section">
                 <h3 className="footer-heading">Enlaces Rápidos</h3>
@@ -338,6 +274,66 @@ function Footer() {
                   </li>
                 </ul>
               </div>
+            </div>
+
+            {/* Segunda fila: Redes Sociales y Contacto */}
+            <div className="footer-bottom-row">
+              {/* Redes Sociales */}
+              <div className="social-section">
+                <h3 className="footer-heading">Redes Sociales</h3>
+                <ul className="footer-links">
+                  <li>
+                    <a
+                      href="https://www.facebook.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="footer-link"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="social-icon"
+                      >
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                      </svg>
+                      Facebook
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.instagram.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="footer-link"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="social-icon"
+                      >
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                      </svg>
+                      Instagram
+                    </a>
+                  </li>
+                </ul>
+              </div>
 
               {/* Contacto */}
               <div className="contact-info-section">
@@ -360,7 +356,9 @@ function Footer() {
                         <polyline points="22,6 12,13 2,6"></polyline>
                       </svg>
                     </div>
-                    <span className="contact-text">info@manoscreativas.com</span>
+                    <a href="mailto:info@manoscreativas.com" className="contact-text">
+                      info@manoscreativas.com
+                    </a>
                   </li>
                   <li className="contact-item">
                     <div className="contact-icon">
@@ -378,7 +376,9 @@ function Footer() {
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                       </svg>
                     </div>
-                    <span className="contact-text">+52 (123) 456-7890</span>
+                    <a href="tel:+521234567890" className="contact-text">
+                      +52 (123) 456-7890
+                    </a>
                   </li>
                   <li className="contact-item">
                     <div className="contact-icon">
@@ -397,22 +397,23 @@ function Footer() {
                         <circle cx="12" cy="10" r="3"></circle>
                       </svg>
                     </div>
-                    <span className="contact-text">
+                    <a
+                      href="https://maps.google.com/?q=Calle+Artesanos+123+Colonia+Centro+Ciudad+Artesanal"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="contact-text"
+                    >
                       Calle Artesanos #123
                       <br />
                       Colonia Centro
                       <br />
                       Ciudad Artesanal, CP 12345
-                    </span>
+                    </a>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="copyright">
-          <p>© {new Date().getFullYear()} Manos Creativas. Todos los derechos reservados.</p>
         </div>
       </div>
 

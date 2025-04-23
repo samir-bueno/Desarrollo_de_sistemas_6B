@@ -4,8 +4,7 @@
   z-index: 100;
   width: 100%;
   border-bottom: 1px solid var(--color-amber-200);
-  background-color: #ffffff; /* Cambiado de rgba(255, 255, 255, 0.9) a blanco sólido */
-  /* Eliminado backdrop-filter: blur(8px); para quitar cualquier transparencia */
+  background-color: #ffffff;
 }
 
 .header-content {
@@ -67,21 +66,6 @@
   .nav-link:hover {
     color: var(--color-amber-600);
   }
-
-  .nav-link::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--color-amber-600);
-    transition: width 0.3s;
-  }
-
-  .nav-link:hover::after {
-    width: 100%;
-  }
 }
 
 /* Mobile Menu */
@@ -95,7 +79,6 @@
   }
 }
 
-/* Ajustar la alineación vertical del botón de menú */
 .menu-button {
   color: var(--color-amber-800);
   background: none;
@@ -112,20 +95,6 @@
   color: var(--color-amber-600);
 }
 
-/* Overlay de fondo para el menú móvil - Ahora comienza debajo del header */
-.menu-backdrop {
-  position: fixed;
-  top: 4rem;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: calc(100% - 4rem);
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 90;
-}
-
-/* Mejorar la visibilidad del menú desplegable con un color distintivo */
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -202,7 +171,6 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Añadir un título al menú móvil */
 .mobile-menu-title {
   color: #78350f;
   font-family: var(--font-serif);

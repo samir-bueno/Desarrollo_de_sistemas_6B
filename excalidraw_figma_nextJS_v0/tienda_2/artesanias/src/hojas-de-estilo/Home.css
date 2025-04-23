@@ -43,6 +43,7 @@
   z-index: 10;
   width: 100%;
   text-align: center;
+  padding: 0 1rem;
 }
 
 .hero-title {
@@ -171,13 +172,13 @@
   margin: 2rem 0;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 576px) {
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .products-grid {
     grid-template-columns: repeat(3, 1fr);
   }
