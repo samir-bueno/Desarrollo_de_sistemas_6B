@@ -1,3 +1,5 @@
+"use client"
+
 import { Link } from "react-router-dom"
 import ProductCard from "../components/ProductCard"
 import "../hojas-de-estilo/Home.css"
@@ -37,6 +39,11 @@ function Home() {
     },
   ]
 
+  // Función para desplazar al inicio de la página
+  const scrollToTop = () => {
+    window.scrollTo(0, 0)
+  }
+
   return (
     <div className="home">
       {/* Hero Section - Eliminado el hero-background */}
@@ -58,7 +65,7 @@ function Home() {
             </p>
             <div className="hero-buttons">
               {/* Solo dejamos el botón "Ver Productos" */}
-              <Link to="/productos" className="button button-primary">
+              <Link to="/productos" className="button button-primary" onClick={scrollToTop}>
                 Ver Productos
               </Link>
             </div>
@@ -77,7 +84,7 @@ function Home() {
                 generación. Nuestros artesanos combinan la tradición con toques contemporáneos para crear piezas únicas.
               </p>
               {/* Volvemos a dejar solo el botón original */}
-              <Link to="/sobre-nosotros" className="button button-primary">
+              <Link to="/sobre-nosotros" className="button button-primary" onClick={scrollToTop}>
                 Conoce Más Sobre Nosotros
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -120,7 +127,7 @@ function Home() {
           </div>
 
           <div className="view-all-container">
-            <Link to="/productos" className="button button-primary">
+            <Link to="/productos" className="button button-primary" onClick={scrollToTop}>
               Ver Todos los Productos
             </Link>
           </div>

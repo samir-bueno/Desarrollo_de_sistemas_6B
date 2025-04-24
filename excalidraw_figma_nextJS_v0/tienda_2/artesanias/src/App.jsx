@@ -6,6 +6,7 @@ import Footer from "./components/Footer"
 import Home from "./pages/Home"
 import Products from "./pages/Products"
 import AboutUs from "./pages/AboutUs"
+import ScrollToTop from "./components/ScrollToTop"
 
 // Estilos
 import "./hojas-de-estilo/App.css"
@@ -13,6 +14,7 @@ import "./hojas-de-estilo/App.css"
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app">
         <Header />
         <main className="main-content">

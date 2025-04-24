@@ -1,12 +1,13 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
-import logo_artesanal from '../imagenes/logo_artesanal.png'
+import { Link, useLocation } from "react-router-dom"
+import logo from '../imagenes/logo_artesanal.png'
 import "../hojas-de-estilo/Header.css"
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const location = useLocation()
 
   // Efecto para prevenir el scroll cuando el menú está abierto
   useEffect(() => {
@@ -40,6 +41,11 @@ function Header() {
     setIsMenuOpen(false)
   }
 
+  // Función para desplazar al inicio de la página cuando se navega a una nueva ruta
+  const scrollToTop = () => {
+    window.scrollTo(0, 0)
+  }
+
   const links = [
     { href: "/", label: "Inicio" },
     { href: "/productos", label: "Productos" },
@@ -52,9 +58,9 @@ function Header() {
       <div className="container">
         <div className="header-content">
           <div className="logo-container">
-            <Link to="/" className="logo-link">
+            <Link to="/" className="logo-link" onClick={scrollToTop}>
               <div className="logo">
-                <img src={logo_artesanal} alt="Manos Creativas Logo" />
+                <img src={logo} alt="Manos Creativas Logo" />
               </div>
               <span className="logo-text">Manos Creativas</span>
             </Link>
@@ -67,7 +73,7 @@ function Header() {
                 key={link.href}
                 to={link.href.startsWith("#") ? link.href : link.href}
                 className="nav-link"
-                onClick={link.onClick}
+                onClick={link.onClick || (link.href.startsWith("#") ? null : scrollToTop)}
               >
                 {link.label}
               </Link>
@@ -126,7 +132,16 @@ function Header() {
                   key={link.href}
                   to={link.href.startsWith("#") ? link.href : link.href}
                   className="nav-link"
-                  onClick={link.onClick || closeMenu}
+                  onClick={(e) => {
+                    if (link.onClick) {
+                      link.onClick(e)
+                    } else if (!link.href.startsWith("#")) {
+                      closeMenu()
+                      scrollToTop()
+                    } else {
+                      closeMenu()
+                    }
+                  }}
                 >
                   {link.label}
                 </Link>
